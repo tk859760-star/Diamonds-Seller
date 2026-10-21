@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, Free Fire Players!
+  </h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamonds Seller 💎</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f0f6ff;color:#14294a}
+header{background:#fff;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:22px;font-weight:bold;color:#1264e8}
+nav a{margin:5px;color:#17345f;text-decoration:none;font-weight:bold}
+.hero{text-align:center;padding:65px 15px;background:linear-gradient(135deg,#082f80,#168bff);color:white}
+.hero .gem{font-size:65px}
+.hero h1{font-size:38px;margin:10px}
+.hero p{margin:15px auto;max-width:500px}
+.btn{display:inline-block;background:#1264e8;color:white;padding:12px 18px;border:0;border-radius:8px;text-decoration:none;font-weight:bold;cursor:pointer;margin:5px}
+.green{background:#16a765}
+section{padding:40px 5%}
+.title{text-align:center;color:#1264e8;margin-bottom:10px;font-size:28px}
+.desc{text-align:center;color:#65738a;margin-bottom:25px}
+.packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px;max-width:950px;margin:auto}
+.card{background:white;border:1px solid #dbe7fa;border-radius:14px;padding:20px 10px;text-align:center;box-shadow:0 5px 18px #163c7110}
+.card .gem{font-size:38px}
+.card h3{color:#1264e8;margin:8px 0}
+.price{font-weight:bold;font-size:21px;margin:10px 0}
+.about{background:white;text-align:center}
+.about p{max-width:650px;margin:15px auto}
+.contact{text-align:center;background:#e2eeff}
+footer{text-align:center;padding:22px;background:#102344;color:white;font-size:13px}
+@media(max-width:420px){header{justify-content:center}nav{text-align:center}.packages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">💎 Diamonds Seller</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#packages">Packages</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="gem">💎</div>
+<h1>Diamonds Seller</h1>
+<p>Your Gaming Top-Up Store! Explore our diamond packages and contact us to order.</p>
+<a href="#packages" class="btn">View Packages</a>
+<a href="#contact" class="btn">Contact Us</a>
+</section>
+
+<section id="packages">
+<h2 class="title">💎 Diamond Packages</h2>
+<p class="desc">Choose your package and ask us for the latest price.</p>
+<div class="packages">
+
+<div class="card">
+<div class="gem">💎</div>
+<h3>100 Diamonds</h3>
+<p>Starter Pack</p>
+<div class="price">PKR 50</div>
+<button class="btn" onclick="order('100 Diamonds')">Order Now</button>
+</div>
+
+<div class="card">
+<div class="gem">💎</div>
+<h3>310 Diamonds</h3>
+<p>Popular Pack</p>
+<div class="price">PKR 200</div>
+<button class="btn" onclick="order('310 Diamonds')">Order Now</button>
+</div>
+
+<div class="card">
+<div class="gem">💎</div>
+<h3>520 Diamonds</h3>
+<p>Value Pack</p>
+<div class="price">PKR 350</div>
+<button class="btn" onclick="order('520 Diamonds')">Order Now</button>
+</div>
+
+<div class="card">
+<div class="gem">💎</div>
+<h3>1060 Diamonds</h3>
+<p>Premium Pack</p>
+<div class="price">PKR 700</div>
+<button class="btn" onclick="order('1060 Diamonds')">Order Now</button>
+</div>
+
+</div>
+</section>
+
+<section class="about" id="about">
+<h2 class="title">About Us</h2>
+<p>Welcome to Diamonds Seller 💎. Explore gaming top-up packages and contact us for current prices, availability and order assistance.</p>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="title">Contact Us</h2>
+<p>Ready to order? Chat with us on WhatsApp!</p>
+<a class="btn green" href="#" onclick="return contactUs()">Chat on WhatsApp</a>
+<p id="message" style="margin-top:12px"></p>
+</section>
+
+<footer>
+<p>© <span id="year"></span> Diamonds Seller. All rights reserved.</p>
+<p>Gaming Store | Pakistan</p>
+</footer>
+
+<script>
+// Replace with your WhatsApp number:
+// Pakistan example format: 923001234567
+const WHATSAPP_NUMBER = "923134551671";
+
+function order(packageName){
+  if(WHATSAPP_NUMBER.includes("YOURNUMBER")){
+    document.getElementById("message").textContent =
+      "Please add your WhatsApp number in the website code first.";
+    location.hash = "contact"; 
+    return;
+  }
+
+  const message = "Hello Diamonds Seller! I want to order " + packageName + ". Please share the current price.";
+  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+
+function contactUs(){
+  if(WHATSAPP_NUMBER.includes("03134551671")){
+    document.getElementById("message").textContent =
+      "Please add your WhatsApp number in the website code first.";
+    return false;
+  }
+
+  window.location.href =
+  "https://wa.me/" + WHATSAPP_NUMBER;
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
